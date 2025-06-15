@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HARSHANTH | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- GSAP and ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <!-- ScrollMagic -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"></script>
+    <!-- Three.js for WebGL -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <!-- PixiJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/6.5.2/pixi.min.js"></script>
+    <!-- EmailJS and Lottie -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">PORTFOLIO</div>
+        <ul class="nav-menu">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Splash Screen with PixiJS Canvas -->
+    <div id="splash-screen">
+        <div id="pixi-splash"></div>
+        <h1 class="h-letter">H</h1>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content" style="display: none;">
+        <!-- Header with WebGL Background -->
+        <header class="header section">
+            <div id="webgl-header"></div>
+            <div class="profile-container">
+                <img src="Picsart_24-09-24_18-37-59-843.jpg" alt="HARSHANTH" class="profile-img" />
+                <h1>HARSHANTH R</h1>
+                <p>Artificial Intelligence and Data Science Student</p>
+            </div>
+        </header>
+
+        <!-- Personal Details -->
+        <section class="section" id="personal">
+            <h2>Personal Details</h2>
+            <div class="personal-details-grid">
+                <div class="detail-card">
+                    <img src="image/krct.jpg" alt="KRCT Logo" class="cert-img" style="margin-bottom: 10px;">
+                    <h3>K.RAMAKRISHNAN COLLEGE OF TECHNOLOGY</h3>
+                    <p>B.Tech Artificial Intelligence and Data Science</p>
+                    <p>(2022-2026)</p>
+                </div>
+
+                <div class="detail-card" id="email-card">
+                    <img src="image/mail.png" alt="Email Icon" class="cert-img" style="margin-bottom: 10px;">
+                    <h3>EMAIL</h3>
+                    <p><a href="mailto:harshanth.ai22@krct.ac.in">harshanth.ai22@krct.ac.in</a></p>
+                </div>
+
+                <div class="detail-card" id="phone-card">
+                    <img src="image/phone.jpg" alt="Phone Icon" class="cert-img" style="margin-bottom: 10px;">
+                    <h3>PHONE</h3>
+                    <p>
+                        <span id="phone-number" style="cursor:pointer; color:var(--primary-color);" 
+                            title="Tap to copy">
+                            +91 9842584621
+                        </span>
+                    </p>
+                </div>
+
+                <div class="detail-card" id="linkedin-card">
+                    <img src="image/Linkedin.png" alt="LinkedIn Icon" class="cert-img" style="margin-bottom: 10px;">
+                    <h3>LinkedIn</h3>
+                    <p><a href="https://www.linkedin.com/in/harshanth0112h/" target="_blank" rel="noopener" onclick="event.stopPropagation();">HARSHANTH R</a></p>
+                </div>
+
+                <div class="detail-card" id="github-card" onclick="window.open('https://github.com/harshanth0112', '_blank')" style="cursor: pointer;">
+                    <img src="image/github.jpg" alt="GitHub Icon" class="cert-img" style="margin-bottom: 10px;">
+                    <h3>Github</h3>
+                    <p>HARSHANTH R</p>
+                </div>
+
+                <div class="detail-card" id="huggingface-card" onclick="window.open('https://huggingface.co/Harshanth0112', '_blank')" style="cursor: pointer;">
+                    <img src="image/huggingface.jpg" alt="HuggingFace" class="cert-img" style="margin-bottom: 10px;">
+                    <h3>Hugging Face</h3>
+                    <p>HARSHANTH R</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section" id="about">
+            <h2 class="section-title">About Me</h2>
+            <div class="swiper about-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="about-card main-intro">
+                            <div class="card-content">
+                                <h3>AI & Data Science Student</h3>
+                                <p>I'm a passionate and driven B.Tech student specializing in Artificial Intelligence and Data Science at K. Ramakrishnan College of Technology. With a strong foundation in machine learning, deep learning, and real-time systems, I love building intelligent solutions that make technology more inclusive and impactful.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="about-card projects-showcase">
+                            <div class="card-content">
+                                <h3>My Projects</h3>
+                                <div class="project-tags">
+                                    <div class="project-tag">
+                                        <span class="tag-icon">🤖</span>
+                                        <span class="tag-text">AI-powered Sign Language Translation</span>
+                                    </div>
+                                    <div class="project-tag">
+                                        <span class="tag-icon">💻</span>
+                                        <span class="tag-text">CGPA & GPA Calculator</span>
+                                    </div>
+                                    <div class="project-tag">
+                                        <span class="tag-icon">📊</span>
+                                        <span class="tag-text">Data Visualization Dashboards</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="about-card current-focus">
+                            <div class="card-content">
+                                <h3>Current Focus</h3>
+                                <p>Currently, I'm focused on developing AI systems that combine computer vision, NLP, and speech technologies for accessible communication. I'm also building a professional portfolio featuring blogs, vlogs, and interactive visualizations to share my learnings with the world.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="about-card connect-card">
+                            <div class="card-content">
+                                <h3>Let's Connect!</h3>
+                                <p>I enjoy exploring the intersection of human-computer interaction and AI, especially how machine learning can bridge communication gaps in society.</p>
+                                <button class="connect-btn" onclick="scrollToContact()">Get in Touch</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="section" id="skills">
+            <h2 class="section-title">Skills</h2>
+            <div class="swiper skills-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="skill-card">
+                            <div class="skill-header">
+                                <h3>Generative AI & Prompt Engineering</h3>
+                            </div>
+                            <div class="skill-logos">
+                                <div class="skill-logo-item">
+                                    <img src="image/LLM.png" alt="LLM" class="skill-logo">
+                                    <span>LLM</span>
+                                </div>
+                                <div class="skill-logo-item">
+                                    <img src="image/NPL.jpg" alt="NLP" class="skill-logo">
+                                    <span>NLP</span>
+                                </div>
+                                <div class="skill-logo-item">
+                                    <img src="image/CHATGPT.jpg" alt="ChatGPT" class="skill-logo">
+                                    <span>ChatGPT</span>
+                                </div>
+                                <div class="skill-logo-item">
+                                    <img src="image/Grok.avif" alt="Grok" class="skill-logo">
+                                    <span>Grok</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="skill-card">
+                            <div class="skill-header">
+                                <h3>Web Development</h3>
+                            </div>
+                            <div class="skill-logos">
+                                <div class="skill-logo-item">
+                                    <img src="image/html.jpg" alt="HTML" class="skill-logo">
+                                    <span>HTML</span>
+                                </div>
+                                <div class="skill-logo-item">
+                                    <img src="image/css.png" alt="CSS" class="skill-logo">
+                                    <span>CSS</span>
+                                </div>
+                                <div class="skill-logo-item">
+                                    <img src="image/js.jpg" alt="JavaScript" class="skill-logo">
+                                    <span>JavaScript</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="skill-card">
+                            <div class="skill-header">
+                                <h3>Cloud Computing</h3>
+                            </div>
+                            <div class="skill-logos">
+                                <div class="skill-logo-item">
+                                    <img src="image/aws.jpg" alt="AWS" class="skill-logo">
+                                    <span>AWS</span>
+                                </div>
+                                <div class="skill-logo-item">
+                                    <img src="image/azure.jpg" alt="Azure" class="skill-logo">
+                                    <span>Azure</span>
+                                </div>
+                                <div class="skill-logo-item">
+                                    <img src="image/googlecloud.png" alt="Google Cloud" class="skill-logo">
+                                    <span>Google Cloud</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="skill-card">
+                            <div class="skill-header">
+                                <h3>Programming Languages</h3>
+                            </div>
+                            <div class="skill-logos">
+                                <div class="skill-logo-item">
+                                    <img src="image/python.jpg" alt="Python" class="skill-logo">
+                                    <span>Python</span>
+                                </div>
+                                <div class="skill-logo-item">
+                                    <img src="image/java.png" alt="Java" class="skill-logo">
+                                    <span>Java</span>
+                                </div>
+                                <div class="skill-logo-item">
+                                    <img src="image/sql.jpg" alt="SQL" class="skill-logo">
+                                    <span>SQL</span>
+                                </div>
+                                <div class="skill-logo-item">
+                                    <img src="image/R.jpg" alt="R" class="skill-logo">
+                                    <span>R</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section class="section" id="certifications">
+            <h2 class="section-title">Certifications</h2>
+            <div class="certifications-grid">
+                <div class="certification-card">
+                    <div class="cert-image">
+                        <img src="pdftoimage/AWS Certified Cloud Practitioner certificate-1.jpg" 
+                             alt="AWS Certified Cloud Practitioner" 
+                             onclick="openModal('pdftoimage/AWS Certified Cloud Practitioner certificate-1.jpg')">
+                    </div>
+                    <div class="cert-content">
+                        <h3>AWS Cloud Practitioner</h3>
+                        <div class="cert-details">
+                            <p>Issued by: Amazon Web Services</p>
+                            <p>Date: Oct 2024</p>
+                        </div>
+                        <button class="view-btn" onclick="openModal('pdftoimage/AWS Certified Cloud Practitioner certificate-1.jpg')">View Certificate</button>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-image">
+                        <img src="pdftoimage/creative design.jpg" 
+                             alt="Creative Design" 
+                             onclick="openModal('pdftoimage/creative design.jpg')">
+                    </div>
+                    <div class="cert-content">
+                        <h3>Creative Design</h3>
+                        <div class="cert-details">
+                            <p>Issued by: K.RAMAKRISHNAN COLLEGE OF TECHNOLOGY</p>
+                            <p>Date: 2024</p>
+                        </div>
+                        <button class="view-btn" onclick="openModal('pdftoimage/creative design.jpg')">View Certificate</button>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-image">
+                        <img src="pdftoimage/digital-skill-web-analytics_certificate_of_achievement_i6j2onw (1)-1.jpg" 
+                             alt="Web Analytics" 
+                             onclick="openModal('pdftoimage/digital-skill-web-analytics_certificate_of_achievement_i6j2onw (1)-1.jpg')">
+                    </div>
+                    <div class="cert-content">
+                        <h3>Web Analytics</h3>
+                        <div class="cert-details">
+                            <p>Issued by: Accenture</p>
+                            <p>Date: 2024</p>
+                        </div>
+                        <button class="view-btn" onclick="openModal('pdftoimage/digital-skill-web-analytics_certificate_of_achievement_i6j2onw (1)-1.jpg')">View Certificate</button>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-image">
+                        <img src="pdftoimage/GEN AI 1-1.jpg" 
+                             alt="Programming Refresher Module" 
+                             onclick="openModal('pdftoimage/GEN AI 1-1.jpg')">
+                    </div>
+                    <div class="cert-content">
+                        <h3>Programming Refresher Module</h3>
+                        <div class="cert-details">
+                            <p>Issued by: Simplilearn</p>
+                            <p>Date: Feb 2025</p>
+                        </div>
+                        <button class="view-btn" onclick="openModal('pdftoimage/GEN AI 1-1.jpg')">View Certificate</button>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-image">
+                        <img src="pdftoimage/GEN AI 2-1.jpg" 
+                             alt="Prompt Engineering & ChatGPT Module" 
+                             onclick="openModal('pdftoimage/GEN AI 2-1.jpg')">
+                    </div>
+                    <div class="cert-content">
+                        <h3>Prompt Engineering & ChatGPT Module</h3>
+                        <div class="cert-details">
+                            <p>Issued by: Simplilearn</p>
+                            <p>Date: Feb 2025</p>
+                        </div>
+                        <button class="view-btn" onclick="openModal('pdftoimage/GEN AI 2-1.jpg')">View Certificate</button>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-image">
+                        <img src="pdftoimage/GEN AI 3-1.jpg" 
+                             alt="Generative AI Models Module" 
+                             onclick="openModal('pdftoimage/GEN AI 3-1.jpg')">
+                    </div>
+                    <div class="cert-content">
+                        <h3>Generative AI Models Module</h3>
+                        <div class="cert-details">
+                            <p>Issued by: Simplilearn</p>
+                            <p>Date: Feb 2025</p>
+                        </div>
+                        <button class="view-btn" onclick="openModal('pdftoimage/GEN AI 3-1.jpg')">View Certificate</button>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-image">
+                        <img src="pdftoimage/GEN AI 4-1.jpg" 
+                             alt="LLM Applications Module" 
+                             onclick="openModal('pdftoimage/GEN AI 4-1.jpg')">
+                    </div>
+                    <div class="cert-content">
+                        <h3>LLM Applications Module</h3>
+                        <div class="cert-details">
+                            <p>Issued by: Simplilearn</p>
+                            <p>Date: June 2025</p>
+                        </div>
+                        <button class="view-btn" onclick="openModal('pdftoimage/GEN AI 4-1.jpg')">View Certificate</button>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-image">
+                        <img src="pdftoimage/GEN AI 5-1.jpg" 
+                             alt="Image Generation Module" 
+                             onclick="openModal('pdftoimage/GEN AI 5-1.jpg')">
+                    </div>
+                    <div class="cert-content">
+                        <h3>Image Generation Module</h3>
+                        <div class="cert-details">
+                            <p>Issued by: Simplilearn</p>
+                            <p>Date: June 2025</p>
+                        </div>
+                        <button class="view-btn" onclick="openModal('pdftoimage/GEN AI 5-1.jpg')">View Certificate</button>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-image">
+                        <img src="pdftoimage/GEN AI 6-1.jpg" 
+                             alt="AI Governance Module" 
+                             onclick="openModal('pdftoimage/GEN AI 6-1.jpg')">
+                    </div>
+                    <div class="cert-content">
+                        <h3>AI Governance Module</h3>
+                        <div class="cert-details">
+                            <p>Issued by: Simplilearn</p>
+                            <p>Date: June 2025</p>
+                        </div>
+                        <button class="view-btn" onclick="openModal('pdftoimage/GEN AI 6-1.jpg')">View Certificate</button>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-image">
+                        <img src="pdftoimage/GEN AI 7-1.jpg" 
+                             alt="Capstone Project Module" 
+                             onclick="openModal('pdftoimage/GEN AI 7-1.jpg')">
+                    </div>
+                    <div class="cert-content">
+                        <h3>Capstone Project Module</h3>
+                        <div class="cert-details">
+                            <p>Issued by: Simplilearn</p>
+                            <p>Date: June 2025</p>
+                        </div>
+                        <button class="view-btn" onclick="openModal('pdftoimage/GEN AI 7-1.jpg')">View Certificate</button>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-image">
+                        <img src="pdftoimage/gen ai course completed-1.jpg" 
+                             alt="Gen AI Specialization" 
+                             onclick="openModal('pdftoimage/gen ai course completed-1.jpg')">
+                    </div>
+                    <div class="cert-content">
+                        <h3>Gen AI Specialization course completed</h3>
+                        <div class="cert-details">
+                            <p>Issued by: Simplilearn</p>
+                            <p>Date: June 2025</p>
+                        </div>
+                        <button class="view-btn" onclick="openModal('pdftoimage/gen ai course completed-1.jpg')">View Certificate</button>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-image">
+                        <img src="pdftoimage/hadoop-1.jpg" 
+                             alt="Big Data Hadoop" 
+                             onclick="openModal('pdftoimage/hadoop-1.jpg')">
+                    </div>
+                    <div class="cert-content">
+                        <h3>Big Data Hadoop</h3>
+                        <div class="cert-details">
+                            <p>Issued by: Udemy</p>
+                            <p>Date: 2024</p>
+                        </div>
+                        <button class="view-btn" onclick="openModal('pdftoimage/hadoop-1.jpg')">View Certificate</button>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-image">
+                        <img src="pdftoimage/javascript-1.jpg" 
+                             alt="JavaScript & Firebase" 
+                             onclick="openModal('pdftoimage/javascript-1.jpg')">
+                    </div>
+                    <div class="cert-content">
+                        <h3>Firebase & JavaScript</h3>
+                        <div class="cert-details">
+                            <p>Issued by: Udemy</p>
+                            <p>Date: 2024</p>
+                        </div>
+                        <button class="view-btn" onclick="openModal('pdftoimage/javascript-1.jpg')">View Certificate</button>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-image">
+                        <img src="pdftoimage/unstop-1.jpg" 
+                             alt="Unstop Participation" 
+                             onclick="openModal('pdftoimage/unstop-1.jpg')">
+                    </div>
+                    <div class="cert-content">
+                        <h3>Unstop Participation</h3>
+                        <div class="cert-details">
+                            <p>Issued by: Unstop</p>
+                            <p>Date: 2024</p>
+                        </div>
+                        <button class="view-btn" onclick="openModal('pdftoimage/unstop-1.jpg')">View Certificate</button>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-image">
+                        <img src="pdftoimage/ethical hacking.jpg" 
+                             alt="Ethical Hacking" 
+                             onclick="openModal('pdftoimage/ethical hacking.jpg')">
+                    </div>
+                    <div class="cert-content">
+                        <h3>Ethical Hacking Workshop</h3>
+                        <div class="cert-details">
+                            <p>Issued by: OZONE CYBER SECURITY</p>
+                            <p>Date: 2024</p>
+                        </div>
+                        <button class="view-btn" onclick="openModal('pdftoimage/ethical hacking.jpg')">View Certificate</button>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-image">
+                        <img src="pdftoimage/intellectual property rights.jpg" 
+                             alt="IPR" 
+                             onclick="openModal('pdftoimage/intellectual property rights.jpg')">
+                    </div>
+                    <div class="cert-content">
+                        <h3>Intellectual Property Rights Workshop</h3>
+                        <div class="cert-details">
+                            <p>Issued by: TNSCST</p>
+                            <p>Date: 2024</p>
+                        </div>
+                        <button class="view-btn" onclick="openModal('pdftoimage/intellectual property rights.jpg')">View Certificate</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal Viewer -->
+        <div id="certModal" class="modal">
+            <span class="close" onclick="closeModal()">×</span>
+            <img class="modal-content" id="fullCertImg" alt="Certificate">
+        </div>
+
+        <!-- Projects Section -->
+        <section class="section" id="projects">
+            <h2>Projects</h2>
+            <div class="swiper project-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="project-card">
+                            <img src="image/Supermarket Sales Analysis & Visualization.jpg" alt="Supermarket Sales Analysis & Visualization Web App">
+                            <div class="project-info">
+                                <h3>Supermarket Sales Analysis & Visualization Web App</h3>
+                                <p>This project is a Flask-based web application for analyzing, forecasting, and visualizing supermarket sales data. It provides interactive dashboards, frequent itemset mining (Apriori algorithm), and insightful visualizations to help supermarkets make data-driven decisions.</p>
+                                <button class="view-btn" onclick="window.location.href='https://github.com/harshanth0112/summa'">View on GitHub</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="project-card">
+                            <img src="image/CGPA & GPA Calculator.png" alt="CGPA & GPA Calculator Web App">
+                            <div class="project-info">
+                                <h3>CGPA & GPA Calculator Web App</h3>
+                                <p>A web application for students to calculate and save their CGPA and semester-wise GPA, with support for cloud backup using Firebase.</p>
+                                <p><strong>Note:</strong> It is created based on KRCT Dept of AI and DS syllabus.</p>
+                                <button class="view-btn" onclick="window.location.href='https://github.com/harshanth0112/cgpa-calculator'">View on GitHub</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="project-card">
+                            <img src="image/sign language.png" alt="Sign Language to Text and Speech Conversion">
+                            <div class="project-info">
+                                <h3>Sign Language to Text and Speech Conversion</h3>
+                                <p>This project is a Sign Language Recognition system that uses computer vision and deep learning to convert hand gestures (sign language) into text and speech. It also features a chatbot interface powered by the Groq API for interactive conversations.</p>
+                                <button class="view-btn" onclick="window.location.href='https://github.com/harshanth0112/SEM-6'">View on GitHub</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="project-card">
+                            <img src="image/Assistant Chatbot.jpg" alt="Nestlé HR Assistant Chatbot">
+                            <div class="project-info">
+                                <h3>Nestlé HR Assistant Chatbot</h3>
+                                <p>This repository provides a chatbot designed to assist with HR-related queries using Python, Gradio, and Groq API.</p>
+                                <button class="view-btn" onclick="window.location.href='https://github.com/harshanth0112/nestle-hr-assistant'">View on GitHub</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="project-card">
+                            <img src="image/Personal Portfolio Website.png" alt="Personal Portfolio Website">
+                            <div class="project-info">
+                                <h3>Personal Portfolio Website</h3>
+                                <p>This is my personal portfolio website, built with HTML, CSS, JavaScript, and modern web technologies. It showcases my skills, certifications, and projects in a visually engaging and interactive way.</p>
+                                <button class="view-btn" onclick="window.location.href='https://github.com/harshanth0112/portfolio-website'">View on GitHub</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add Navigation -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section" id="contact">
+            <h2>Contact Me</h2>
+            <form class="contact-form" onsubmit="sendEmail(event)">
+                <div class="input-group">
+                    <input type="text" id="name" placeholder=" " required>
+                    <label for="name">Name</label>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="email" placeholder=" " required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-group">
+                    <textarea id="message" placeholder=" " rows="5" required></textarea>
+                    <label for="message">Message</label>
+                </div>
+                <button type="submit">Send Message</button>
+                <div id="form-message" class="form-message"></div>
+            </form>
+        </section>
+
+        <!-- Footer with WebGL -->
+        <footer>
+            <div id="webgl-footer"></div>
+            <p>© 2025 HARSHANTH. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
