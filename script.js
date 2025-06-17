@@ -484,6 +484,12 @@ document.addEventListener('DOMContentLoaded', () => {
             el: '.swiper-pagination',
             clickable: true,
         },
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+        },
+        loop: true,
     });
 
     // Initialize Skills Swiper
@@ -504,6 +510,12 @@ document.addEventListener('DOMContentLoaded', () => {
             el: '.swiper-pagination',
             clickable: true,
         },
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+        },
+        loop: true,
     });
 
     // Initialize Certifications Swiper
@@ -574,7 +586,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 slidesPerView: 3,
                 spaceBetween: 40
             }
-        }
+        },
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+        },
     });
 
     // Add keyboard navigation for all swipers
@@ -677,4 +694,53 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     initializeAboutAnimations();
+
+    // Hamburger menu toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    if (navToggle && navMenu) {
+        navToggle.setAttribute('aria-controls', 'main-nav-menu');
+        navMenu.setAttribute('id', 'main-nav-menu');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.addEventListener('click', (e) => {
+            const isOpen = navMenu.classList.toggle('open');
+            navToggle.classList.toggle('open');
+            navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+        // Close menu and smooth scroll to section on nav link click (mobile)
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                const href = link.getAttribute('href');
+                if (href && href.startsWith('#')) {
+                    e.preventDefault();
+                    // If mobile, close menu first
+                    if (window.innerWidth <= 768) {
+                        navMenu.classList.remove('open');
+                        navToggle.classList.remove('open');
+                        navToggle.setAttribute('aria-expanded', 'false');
+                        setTimeout(() => {
+                            const target = document.querySelector(href);
+                            if (target) {
+                                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            }
+                        }, 120);
+                    } else {
+                        // On desktop/full size, just smooth scroll
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }
+                }
+            });
+        });
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (navMenu.classList.contains('open') && !navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+                navMenu.classList.remove('open');
+                navToggle.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
 });
