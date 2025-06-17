@@ -37,17 +37,70 @@ body {
 }
 
 .dark-mode {
-  --primary-color: #5dade2;
-  --secondary-color: #34495e;
-  --text-color: #ecf0f1;
-  --background-color: #1a1a1a;
-  --card-bg: #2c2c2c;
-  --heading-color: #ecf0f1;
-  --link-color: #5dade2;
-  --link-hover-color: #3498db;
-  --card-text-color: #ecf0f1;
-  --input-text-color: #ecf0f1;
-  --input-bg-color: #2c2c2c;
+  --background-color: #0a0a0a;
+  --card-bg: rgba(20, 20, 30, 0.85);
+  --text-color: #f5f6fa;
+  --secondary-color: #bfc9d1;
+  --heading-color: #fff;
+  --primary-color: #00A1FF;
+  --primary-color-dark: #0077cc;
+  --box-shadow: 0 8px 32px rgba(0,0,0,0.7);
+}
+
+.dark-mode .about-swiper {
+  background: linear-gradient(135deg, rgba(10,10,20,0.95), rgba(20,20,30,0.85));
+  box-shadow: 0 8px 32px rgba(0,0,0,0.7);
+}
+
+.dark-mode .about-card,
+.dark-mode .swiper-slide {
+  background: rgba(20, 20, 30, 0.92) !important;
+  color: #f5f6fa;
+  border-radius: 18px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.7);
+  border: none;
+}
+
+.dark-mode .about-card h3,
+.dark-mode .about-card h2,
+.dark-mode .section-title {
+  color: #00A1FF !important;
+  text-shadow: 0 2px 8px rgba(0,161,255,0.08);
+}
+
+.dark-mode .about-card p,
+.dark-mode .about-card .card-content {
+  color: #f5f6fa;
+}
+
+.dark-mode .swiper-button-next,
+.dark-mode .swiper-button-prev {
+  background: #111a2f;
+  color: #00A1FF;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.dark-mode .swiper-pagination-bullet {
+  background: #00A1FF;
+  opacity: 0.4;
+}
+.dark-mode .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+.dark-mode .connect-btn {
+  background: #00A1FF;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0,161,255,0.15);
+}
+.dark-mode .connect-btn:hover {
+  background: #0077cc;
+}
+
+/* Remove white border from Swiper cards in dark mode */
+.dark-mode .about-card,
+.dark-mode .swiper-slide {
+  border: none !important;
 }
 
 /* Navigation */
@@ -111,16 +164,168 @@ body {
   z-index: 9999;
   opacity: 1;
   transition: opacity 0.5s ease;
+  flex-direction: column;
 }
 
-.h-letter {
-  font-size: 6rem;
-  font-weight: bold;
-  color: var(--primary-color);
-  text-shadow: 0 0 15px rgba(52, 152, 219, 0.5);
+.splash-name-anim {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.08em;
+  margin: 0;
+  margin-top: 18px;
+  text-align: center;
   position: relative;
-  z-index: 1;
 }
+
+.splash-h-logo {
+  width: 120px;
+  height: 120px;
+  display: inline-flex;
+  /* animation: splashHScaleIn 1.2s cubic-bezier(.4,2,.6,1) 0s both; */
+}
+
+@keyframes splashHScaleIn {
+  0% { transform: scale(3) translateY(0); opacity: 0; }
+  60% { transform: scale(1.15) translateY(0); opacity: 1; }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+.splash-rest-name {
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(80px);
+  font-family: inherit;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #00A1FF;
+  letter-spacing: 0.08em;
+  transition: none;
+  background: linear-gradient(to bottom, #00A1FF, #7B00FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.splash-rest-name.splash-rest-in {
+  transition: opacity 0.5s 0.1s, transform 0.7s cubic-bezier(.4,2,.6,1);
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.splash-blast {
+  animation: splashBlast 0.5s cubic-bezier(.4,2,.6,1) forwards;
+}
+
+@keyframes splashBlast {
+  0% { opacity: 1; transform: scale(1);}
+  80% { opacity: 1; transform: scale(1.25);}
+  100% { opacity: 0; transform: scale(1.5);}
+}
+
+/* Splash letter-by-letter animation */
+.splash-letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(40px) scale(0.8);
+  transition: opacity 0.5s, transform 0.7s cubic-bezier(.4,2,.6,1);
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  isolation: isolate;
+  color: transparent; /* Essential for background-clip: text to work */
+  background: none; /* Container itself should not have a solid background */
+  flex-shrink: 0;
+}
+
+/* Responsive splash letters */
+@media (max-width: 768px) {
+  .splash-letter {
+    font-size: 1.8rem;
+    letter-spacing: 0.06em;
+  }
+}
+
+@media (max-width: 480px) {
+  .splash-letter {
+    font-size: 1.4rem;
+    letter-spacing: 0.04em;
+  }
+}
+
+@media (max-width: 375px) {
+  .splash-letter {
+    font-size: 1.2rem;
+    letter-spacing: 0.03em;
+  }
+}
+
+/* Responsive main content header */
+#main-content .header h1 {
+  font-size: 3rem;
+  word-break: break-word;
+}
+
+@media (max-width: 768px) {
+  #main-content .header h1 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #main-content .header h1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 375px) {
+  #main-content .header h1 {
+    font-size: 1.4rem;
+  }
+}
+
+/* Styles for the actual text letters (A, R, S, H, A, N, T, H) */
+.splash-letter {
+  color: transparent; /* Make text transparent to show background gradient */
+  background: linear-gradient(to bottom, #007bff, #007bff); /* Unified blue to orange-red gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  flex-shrink: 0;
+  opacity: 0;
+  transform: translateY(40px) scale(0.8);
+}
+
+/* Dark mode splash letters */
+.dark-mode .splash-letter {
+  color: transparent;
+  background: linear-gradient(to bottom, #007bff, #007bff); /* Match day mode gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+/* Dark mode splash letter H */
+.dark-mode .splash-letter.splash-h {
+  color: transparent;
+  background: linear-gradient(to bottom, #007bff, #007bff); /* Match day mode gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  opacity: 0;
+  transform: translateY(40px) scale(0.8);
+  flex-shrink: 0;
+}
+
+/* Remove explicit styles for the H letter */
 
 /* Main Content */
 #main-content {
@@ -298,8 +503,8 @@ body {
 
 /* Dark Mode Styles */
 .dark-mode .detail-card {
-  background: rgba(30, 30, 30, 0.95);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
 }
 
 /* Skills */
@@ -727,33 +932,48 @@ body {
 
 /* Contact Section Dark Mode Styles */
 .dark-mode .contact-form {
-  background: var(--card-bg);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  background: rgba(20, 20, 30, 0.92) !important;
+  color: #f5f6fa;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.7);
+  border-radius: 18px;
+  border: none;
 }
 
 .dark-mode .input-group input,
 .dark-mode .input-group textarea {
-  background: var(--input-bg-color);
-  color: var(--input-text-color);
-  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(30, 30, 40, 0.95);
+  color: #f5f6fa;
+  border: 1.5px solid #222;
 }
-
 .dark-mode .input-group input:focus,
 .dark-mode .input-group textarea:focus {
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 2px rgba(93, 173, 226, 0.2);
+  border-color: #00A1FF;
+  box-shadow: 0 0 0 2px rgba(0,161,255,0.15);
 }
-
 .dark-mode .input-group label {
-  color: var(--text-color);
+  color: #bfc9d1;
+  background: transparent;
 }
-
 .dark-mode .input-group input:focus + label,
 .dark-mode .input-group textarea:focus + label,
 .dark-mode .input-group input:not(:placeholder-shown) + label,
 .dark-mode .input-group textarea:not(:placeholder-shown) + label {
-  background: var(--card-bg);
-  color: var(--primary-color);
+  color: #00A1FF;
+  background: rgba(20, 20, 30, 0.92);
+}
+
+.dark-mode .input-group.focused {
+  transform: translateY(-2px);
+}
+
+.dark-mode .contact-form button {
+  background: #00A1FF;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0,161,255,0.15);
+  border: none;
+}
+.dark-mode .contact-form button:hover {
+  background: #0077cc;
 }
 
 /* Contact Section Responsive Styles */
@@ -984,6 +1204,10 @@ footer {
 
   .about-card h3 {
     font-size: 1.2rem;
+  }
+
+  .about-card p {
+    font-size: 1rem;
   }
 
   .project-tag {
@@ -1792,4 +2016,228 @@ footer {
   .nav-menu.open {
     display: flex;
   }
+}
+
+/* Splash H Logo Styles */
+.splash-h-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  display: inline-flex;
+  margin: 0 auto;
+}
+
+.h-logo {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  /* animation: splashHIn 1.2s cubic-bezier(.4,2,.6,1) both; */
+  overflow: hidden; /* Ensure proper clipping for H logo components */
+}
+
+.h-logo::before, .h-logo::after {
+  content: '';
+  position: absolute;
+  background: #007bff; /* Changed to orange-red for new color */
+  transition: all 0.3s cubic-bezier(.4,2,.6,1);
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 50%
+  );
+  background-size: 4px 4px;
+  display: block; /* Ensure elements render as blocks */
+}
+.h-logo::before { /* Left vertical bar */
+  width: 20px;
+  height: 100%;
+  left: 0;
+  background: linear-gradient(to bottom, #007bff , #007bff); /* New orange-red gradient */
+}
+.h-logo::after { /* Right vertical bar */
+  width: 20px;
+  height: 100%;
+  right: 0;
+  background: linear-gradient(to bottom, #007bff, #007bff); /* New orange-red gradient */
+}
+.h-crossbar {
+  position: absolute;
+  width: 60px;
+  height: 10px;
+  background: linear-gradient(to right, #007bff, #007bff); /* New orange-red gradient */
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  transition: all 0.3s cubic-bezier(.4,2,.6,1);
+  border-radius: 4px;
+  display: block; /* Ensure element renders as a block */
+}
+
+/* Splash entrance animation */
+@keyframes splashHIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.7) rotate(-20deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.1) rotate(8deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* --- Modern Full Dark Mode for All Main Sections --- */
+.dark-mode .personal-details-grid,
+.dark-mode .skills-grid,
+.dark-mode .certifications-grid {
+  background: transparent;
+}
+
+.dark-mode .detail-card,
+.dark-mode .skill-card,
+.dark-mode .certification-card,
+.dark-mode .project-card {
+  background: rgba(20, 20, 30, 0.92) !important;
+  color: #f5f6fa;
+  border-radius: 18px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.7);
+  border: none !important;
+}
+
+.dark-mode .detail-card h3,
+.dark-mode .skill-card h3,
+.dark-mode .cert-content h3,
+.dark-mode .project-card h3 {
+  color: #00A1FF !important;
+  text-shadow: 0 2px 8px rgba(0,161,255,0.08);
+}
+
+.dark-mode .detail-card p,
+.dark-mode .skill-card p,
+.dark-mode .cert-content p,
+.dark-mode .project-card p {
+  color: #f5f6fa;
+}
+
+.dark-mode .view-btn,
+.dark-mode .connect-btn,
+.dark-mode .contact-form button {
+  background: #00A1FF;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0,161,255,0.15);
+  border: none;
+}
+.dark-mode .view-btn:hover,
+.dark-mode .connect-btn:hover,
+.dark-mode .contact-form button:hover {
+  background: #0077cc;
+}
+
+.dark-mode .contact-form {
+  background: rgba(20, 20, 30, 0.92) !important;
+  color: #f5f6fa;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.7);
+  border-radius: 18px;
+  border: none;
+}
+
+.dark-mode .input-group input,
+.dark-mode .input-group textarea {
+  background: rgba(30, 30, 40, 0.95);
+  color: #f5f6fa;
+  border: 1.5px solid #222;
+}
+.dark-mode .input-group input:focus,
+.dark-mode .input-group textarea:focus {
+  border-color: #00A1FF;
+  box-shadow: 0 0 0 2px rgba(0,161,255,0.15);
+}
+.dark-mode .input-group label {
+  color: #bfc9d1;
+  background: transparent;
+}
+.dark-mode .input-group input:focus + label,
+.dark-mode .input-group textarea:focus + label,
+.dark-mode .input-group input:not(:placeholder-shown) + label,
+.dark-mode .input-group textarea:not(:placeholder-shown) + label {
+  color: #00A1FF;
+  background: rgba(20, 20, 30, 0.92);
+}
+
+.dark-mode .input-group.focused {
+  transform: translateY(-2px);
+}
+
+.dark-mode .contact-form button {
+  background: #00A1FF;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0,161,255,0.15);
+  border: none;
+}
+.dark-mode .contact-form button:hover {
+  background: #0077cc;
+}
+
+.dark-mode footer {
+  background: #0a0a0a;
+  color: #bfc9d1;
+  border-top: 1px solid #222;
+}
+
+/* --- Modern Full Dark Mode for Splash H Section --- */
+.dark-mode #splash-screen {
+  background: #0a0a0a !important;
+}
+
+.dark-mode .splash-h-logo {
+  background: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.dark-mode .h-logo::before,
+.dark-mode .h-logo::after {
+  background: none !important;
+}
+
+.dark-mode .h-crossbar {
+  background: none !important;
+}
+
+.dark-mode .splash-letter {
+  color: transparent; /* Ensure transparent in dark mode for clipping */
+  background: linear-gradient(to bottom, #007bff, #007bff); /* Match unified orange-red gradient */
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.dark-mode .splash-letter.splash-h {
+  color: transparent;
+  background: linear-gradient(to bottom, #007bff, #007bff); /* Match other letters */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  opacity: 0;
+  transform: translateY(40px) scale(0.8);
+  flex-shrink: 0;
+}
+
+/* Dark mode for the actual text letters */
+.dark-mode .splash-letter:not(.splash-h) {
+  color: transparent; /* Make text transparent in dark mode */
+  background: linear-gradient(to bottom, #007bff, #007bff); /* Match unified orange-red gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.dark-mode .splash-name-anim {
+  color: #fff;
 }
