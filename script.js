@@ -3,6 +3,77 @@
     emailjs.init("XlFoEFbUUr2clNY0I"); // Replace with your EmailJS Public Key
 })();
 
+document.addEventListener('DOMContentLoaded', () => {
+    const splashScreen = document.getElementById("splash-screen");
+    const mainContent = document.getElementById("main-content");
+    const letters = document.querySelectorAll(".splash-letter");
+
+    // Initially hide all letters
+    letters.forEach(letter => {
+        letter.style.opacity = 0;
+        letter.style.transform = "translateY(40px) scale(0.8)";
+    });
+
+    console.log("Splash screen letters:", letters);
+
+    // Create GSAP timeline
+    const tl = gsap.timeline();
+
+    // Animate first letter scaling up to full screen and fade in
+    tl.to(letters[0], {
+        scale: 10,
+        opacity: 1,
+        duration: 0.8,
+        ease: "power2.out",
+        onStart: () => {
+            letters[0].style.display = "inline-flex";
+            console.log("Animating first letter scale up");
+        }
+    });
+
+    // Scale first letter back to normal size
+    tl.to(letters[0], {
+        scale: 1,
+        duration: 0.6,
+        ease: "elastic.out(1, 0.3)",
+        onStart: () => {
+            console.log("Animating first letter scale down");
+        }
+    });
+
+    // Animate rest of the letters one by one
+    tl.to(letters, {
+        opacity: 1,
+        y: 0,
+        duration: 0.7,
+        stagger: 0.15,
+        ease: "power2.out",
+        onStart: () => {
+            console.log("Animating rest of the letters");
+        }
+    });
+
+    // Fade out splash screen and show main content
+    tl.to(splashScreen, {
+        opacity: 0,
+        duration: 1,
+        delay: 0.5,
+        ease: "power2.in",
+        onComplete: () => {
+            splashScreen.style.display = "none";
+            mainContent.style.display = "block";
+            console.log("Splash screen hidden, main content shown");
+            gsap.from("#main-content > *", {
+                opacity: 0,
+                y: 20,
+                duration: 0.8,
+                stagger: 0.1,
+                ease: "power2.out"
+            });
+        }
+    });
+});
+
 // Enhanced Send Email Function
 function sendEmail(event) {
     event.preventDefault();
@@ -172,13 +243,23 @@ function initializeThemeToggle() {
 function initializeAnimations() {
     // Splash Screen Animation
     const splashScreen = document.getElementById("splash-screen");
-    const hLetter = document.querySelector(".h-letter");
+    const hLetter = document.querySelector(".splash-h-logo");
 
     gsap.from(hLetter, {
         scale: 0,
         opacity: 0,
         duration: 1.5,
         ease: "elastic.out(1, 0.3)",
+    });
+
+    // Animate the rest of the name
+    gsap.from(".splash-letter:not(.splash-h)", {
+        opacity: 0,
+        y: 40,
+        duration: 0.7,
+        stagger: 0.08,
+        ease: "power2.out",
+        delay: 0.8 // Start after the H logo has mostly appeared
     });
 
     gsap.to(splashScreen, {
