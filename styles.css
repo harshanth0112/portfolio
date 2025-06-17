@@ -1002,115 +1002,131 @@ footer {
 
 /* Additional Mobile Optimizations */
 @media screen and (max-width: 480px) {
+  body {
+    font-size: 1.08rem;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+  }
+  .navbar {
+    padding: 0.7rem 0.5rem;
+    min-height: 48px;
+    height: 48px;
+  }
   .nav-brand {
-    font-size: 1.2rem;
-  }
-
-  .nav-menu a {
-    font-size: 0.85rem;
-  }
-
-  .header {
-    padding-top: calc(var(--navbar-height) + 8px) !important;
-  }
-
-  .profile-img {
-    margin-bottom: 10px;
-    max-width: 80vw;
-    min-width: 60px;
-    min-height: 60px;
-  }
-
-  .section h2 {
-    font-size: 1.6rem;
-  }
-
-  .detail-card {
-    padding: 12px;
-  }
-
-  .detail-card h3 {
-    font-size: 1rem;
-  }
-
-  .detail-card p {
-    font-size: 0.8rem;
-  }
-
-  .about-swiper .swiper-slide {
-    width: 260px;
-  }
-
-  .about-card {
-    padding: 1rem;
-  }
-
-  .about-card h3 {
     font-size: 1.1rem;
   }
-
-  .about-card p {
-    font-size: 0.9rem;
+  .theme-toggle, .nav-toggle {
+    top: 10px;
+    right: 10px;
+    width: 36px;
+    height: 36px;
   }
-
-  .project-tag {
-    padding: 0.7rem;
+  .header {
+    padding: 24px 5px 0 5px !important;
+    min-height: 120px;
   }
-
-  .tag-icon {
+  .profile-img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+  }
+  .header p {
+    font-size: 1rem;
+  }
+  .section {
+    padding: 28px 5px 18px 5px;
+  }
+  .section h2 {
     font-size: 1.2rem;
+    margin-bottom: 18px;
   }
-
-  .tag-text {
+  .personal-details-grid,
+  .certifications-grid {
+    padding: 0.5rem;
+    gap: 0.7rem;
+  }
+  .detail-card, .certification-card, .project-card, .about-card {
+    padding: 10px 6px;
+    border-radius: 10px;
+    font-size: 0.98rem;
+    margin-bottom: 10px;
+  }
+  .detail-card h3, .cert-content h3 {
+    font-size: 1rem;
+    margin: 8px 0;
+  }
+  .detail-card p, .cert-details p {
     font-size: 0.85rem;
   }
-
-  .connect-btn {
-    padding: 0.7rem 1.2rem;
-    font-size: 0.9rem;
+  .project-card img, .cert-image img {
+    height: 120px;
+    min-height: 80px;
+    object-fit: cover;
   }
-
+  .view-btn, .connect-btn, .contact-form button {
+    font-size: 1rem;
+    padding: 0.7rem 0.5rem;
+    border-radius: 7px;
+  }
   .contact-form {
-    padding: 1rem;
-  }
-
-  .input-group {
-    margin-bottom: 1.2rem;
-  }
-
-  .input-group input,
-  .input-group textarea {
     padding: 0.7rem;
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
-
-  .input-group label {
-    font-size: 0.9rem;
+  .input-group input, .input-group textarea {
+    font-size: 1rem;
+    padding: 0.7rem;
   }
-
-  .contact-form button {
-    padding: 0.8rem;
-    font-size: 0.9rem;
+  .swiper {
+    padding: 20px 0;
+  }
+  .swiper-slide {
+    width: 90vw !important;
+    min-width: 0;
+    max-width: 98vw;
+    margin: 0 auto;
+    border-radius: 12px;
+  }
+  .about-swiper .swiper-slide {
+    width: 95vw !important;
+  }
+  .project-swiper .swiper-slide {
+    width: 95vw !important;
+  }
+  .skills-swiper .swiper-slide {
+    width: 95vw !important;
+  }
+  .certifications-swiper .swiper-slide {
+    width: 95vw !important;
+  }
+  footer {
+    padding: 18px 5px;
+    font-size: 0.95rem;
   }
 }
 
-/* Fix for very small screens */
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 375px) {
   .header h1 {
-    font-size: 1.6rem;
+    font-size: 1.1rem;
   }
-
   .profile-img {
-    width: 90px;
-    height: 90px;
+    width: 60px;
+    height: 60px;
   }
-
   .section h2 {
-    font-size: 1.4rem;
+    font-size: 1rem;
   }
-
-  .about-swiper .swiper-slide {
-    width: 240px;
+  .detail-card, .certification-card, .project-card, .about-card {
+    font-size: 0.92rem;
+    padding: 7px 3px;
+  }
+  .view-btn, .connect-btn, .contact-form button {
+    font-size: 0.95rem;
+    padding: 0.6rem 0.4rem;
   }
 }
 
