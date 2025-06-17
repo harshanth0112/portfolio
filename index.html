@@ -22,6 +22,11 @@
     <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- For SVG favicon -->
+    <link rel="icon" type="image/svg+xml" href="h-logo.svg">
+
+    <!-- For PNG favicon (fallback for older browsers) -->
+    <link rel="icon" type="image/png" href="image/logo.png" sizes="32x32">
 </head>
 <body>
     <!-- Navigation -->
@@ -40,9 +45,19 @@
     </nav>
 
     <!-- Splash Screen with PixiJS Canvas -->
-    <div id="splash-screen">
-        <div id="pixi-splash"></div>
-        <h1 class="h-letter">H</h1>
+    <div id="splash-screen" role="presentation" aria-label="Loading animation">
+        <canvas id="pixi-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;"></canvas>
+        <div class="splash-name-anim" role="presentation" style="position: relative; z-index: 2;">
+            <span class="splash-letter splash-h" aria-label="Letter H">H</span>
+            <span class="splash-letter" aria-label="Letter A">A</span>
+            <span class="splash-letter" aria-label="Letter R">R</span>
+            <span class="splash-letter" aria-label="Letter S">S</span>
+            <span class="splash-letter" aria-label="Letter H">H</span>
+            <span class="splash-letter" aria-label="Letter A">A</span>
+            <span class="splash-letter" aria-label="Letter N">N</span>
+            <span class="splash-letter" aria-label="Letter T">T</span>
+            <span class="splash-letter" aria-label="Letter H">H</span>
+        </div>
     </div>
 
     <!-- Main Content -->
@@ -94,7 +109,7 @@
                 <div class="detail-card" id="github-card" onclick="window.open('https://github.com/harshanth0112', '_blank')" style="cursor: pointer;">
                     <img src="image/github.jpg" alt="GitHub Icon" class="cert-img" style="margin-bottom: 10px;">
                     <h3>Github</h3>
-                    <p>HARSHANTH RAVICHANDIRAN</p>
+                    <p>HARSHANTH R</p>
                 </div>
 
                 <div class="detail-card" id="huggingface-card" onclick="window.open('https://huggingface.co/Harshanth0112', '_blank')" style="cursor: pointer;">
