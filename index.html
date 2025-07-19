@@ -77,10 +77,12 @@
             <h2>Personal Details</h2>
             <div class="personal-details-grid">
                 <div class="detail-card">
-                    <img src="image/krct.jpg" alt="KRCT Logo" class="cert-img" style="margin-bottom: 10px;">
-                    <h3>K.RAMAKRISHNAN COLLEGE OF TECHNOLOGY</h3>
-                    <p>B.Tech Artificial Intelligence and Data Science</p>
-                    <p>(2022-2026)</p>
+                    <a href="https://www.krct.ac.in/" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">
+                        <img src="image/krct.jpg" alt="KRCT Logo" class="cert-img" style="margin-bottom: 10px;">
+                        <h3>K.RAMAKRISHNAN COLLEGE OF TECHNOLOGY</h3>
+                        <p>B.Tech Artificial Intelligence and Data Science</p>
+                        <p>(2022-2026)</p>
+                    </a>
                 </div>
 
                 <div class="detail-card" id="email-card">
@@ -543,9 +545,19 @@
                         <div class="cert-details">
                             <p>Issued by: TNSCST</p>
                             <p>Date: 2024</p>
-                     </div>
-                        <!-- Cisco Python Certificate -->
-                        <div class="cert-content">
+                        </div>
+                        <button class="view-btn" onclick="openModal('pdftoimage/intellectual property rights.jpg')">View Certificate</button>
+                    </div>
+                </div>
+
+                <!-- Cisco Python Certificate -->
+                <div class="certification-card">
+  <div class="cert-image">
+    <img src="pdftoimage/CISCO (PythonEssentials1)_page-0001.jpg" 
+         alt="Python Essentials 1" 
+         onclick="openModal('pdftoimage/CISCO (PythonEssentials1)_page-0001.jpg')">
+  </div>
+  <div class="cert-content">
     <h3>Python Essentials 1</h3>
     <div class="cert-details">
       <p>Issued by: Cisco Networking Academy</p>
@@ -553,8 +565,15 @@
     </div>
     <button class="view-btn" onclick="openModal('pdftoimage/CISCO (PythonEssentials1)_page-0001.jpg')">View Certificate</button>
   </div>
+</div>
 
-  <!-- IBM AI Certificate -->
+<!-- IBM AI Certificate -->
+<div class="certification-card">
+  <div class="cert-image">
+    <img src="pdftoimage/IBM Getting Started with Artificial Intelligence_page-0001.jpg" 
+         alt="Getting Started with Artificial Intelligence" 
+         onclick="openModal('pdftoimage/IBM Getting Started with Artificial Intelligence_page-0001.jpg')">
+  </div>
   <div class="cert-content">
     <h3>Getting Started with Artificial Intelligence</h3>
     <div class="cert-details">
@@ -563,8 +582,15 @@
     </div>
     <button class="view-btn" onclick="openModal('pdftoimage/IBM Getting Started with Artificial Intelligence_page-0001.jpg')">View Certificate</button>
   </div>
+</div>
 
-  <!-- IBM Cloud Certificate -->
+<!-- IBM Cloud Certificate -->
+<div class="certification-card">
+  <div class="cert-image">
+    <img src="pdftoimage/IBM Journey to Cloud_page-0001.jpg" 
+         alt="Journey to Cloud: Envisioning Your Solution" 
+         onclick="openModal('pdftoimage/IBM Journey to Cloud_page-0001.jpg')">
+  </div>
   <div class="cert-content">
     <h3>Journey to Cloud: Envisioning Your Solution</h3>
     <div class="cert-details">
@@ -573,9 +599,7 @@
     </div>
     <button class="view-btn" onclick="openModal('pdftoimage/IBM Journey to Cloud_page-0001.jpg')">View Certificate</button>
   </div>
-                        <button class="view-btn" onclick="openModal('pdftoimage/intellectual property rights.jpg')">View Certificate</button>
-                    </div>
-                </div>
+</div>
             </div>
         </section>
 
