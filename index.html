@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HARSHANTH R — AI & Data Science</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@dotlottie/player-component@2/dist/dotlottie-player.mjs"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- CUSTOM CURSOR -->
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- SCROLL PROGRESS LINE -->
+  <div class="scroll-line" id="scroll-line"></div>
+
+  <!-- ═══════════════════════════════════════
+       SPLASH SCREEN
+  ═══════════════════════════════════════ -->
+  <div id="splash">
+    <div id="splash-name">
+      <span class="char">H</span><span class="char">A</span><span class="char">R</span><span class="char">S</span><span class="char">H</span><span class="char">A</span><span class="char">N</span><span class="char">T</span><span class="char">H</span>
+    </div>
+    <div id="splash-tag">AI &amp; Data Science</div>
+    <div id="splash-bar"></div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════ -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo">HR/</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-menu">
+      <li><a href="#about" onclick="closeMenu()">About</a></li>
+      <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
+      <li><a href="#certifications" onclick="closeMenu()">Certs</a></li>
+      <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
+      <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ═══════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-left reveal">
+      <div class="hero-tag">AWS Cloud | AI Engineer | Python Full Stack | Computer Vision</div>
+      <h1 class="hero-title">
+        <br>
+        <span class="outline">HARSHANTH</span><br>
+        R
+      </h1>
+      <p class="hero-desc">
+        Motivated B.Tech graduate in Artificial Intelligence and Data Science with hands-on experience in developing and deploying AI-powered and cloud-native applications.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary">View Projects</a>
+        <a href="#contact" class="btn-ghost">Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero-right reveal">
+      <div class="hero-img-wrap">
+        <img src="Picsart_24-09-24_18-37-59-843.jpg" alt="Harshanth R">
+        <div class="hero-img-badge">
+          AI &amp; DS<br>Graduate<br>2026
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       MARQUEE TICKER
+  ═══════════════════════════════════════ -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <div class="marquee-item">Machine Learning</div>
+      <div class="marquee-item">Computer Vision</div>
+      <div class="marquee-item">Deep Learning</div>
+      <div class="marquee-item">Generative AI</div>
+      <div class="marquee-item">Cloud Computing</div>
+      <div class="marquee-item">Python</div>
+      <div class="marquee-item">NLP</div>
+      <div class="marquee-item">Data Science</div>
+      <!-- duplicate for seamless loop -->
+      <div class="marquee-item">Machine Learning</div>
+      <div class="marquee-item">Computer Vision</div>
+      <div class="marquee-item">Deep Learning</div>
+      <div class="marquee-item">Generative AI</div>
+      <div class="marquee-item">Cloud Computing</div>
+      <div class="marquee-item">Python</div>
+      <div class="marquee-item">NLP</div>
+      <div class="marquee-item">Data Science</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       ABOUT
+  ═══════════════════════════════════════ -->
+  <section id="about">
+    <div class="section-label">About</div>
+    <div class="section-title reveal">WHO I AM</div>
+    <div class="about-grid reveal">
+      <div class="about-text">
+        <p>I'm a motivated <strong>B.Tech graduate in Artificial Intelligence and Data Science</strong> with hands-on experience in developing and deploying AI-powered and cloud-native applications.</p>
+        <p>Skilled in <strong>Computer Vision, NLP, Multimodal AI, and Python full-stack development</strong>, with practical expertise in AWS services including Lambda, S3, and RDS.</p>
+        <p>Passionate about building scalable, production-ready solutions and contributing to innovative AI and cloud technologies.</p>
+        <p>Active on
+          <a href="https://huggingface.co/Harshanth0112" target="_blank" rel="noopener">Hugging Face</a>
+          and
+          <a href="https://github.com/harshanth0112" target="_blank" rel="noopener">GitHub</a>,
+          sharing models and open-source code with the community.
+        </p>
+        <div class="social-row">
+          <a href="https://www.linkedin.com/in/harshanth0112h/" target="_blank" rel="noopener" class="social-pill">LinkedIn ↗</a>
+          <a href="https://github.com/harshanth0112" target="_blank" rel="noopener" class="social-pill">GitHub ↗</a>
+          <a href="https://huggingface.co/Harshanth0112" target="_blank" rel="noopener" class="social-pill">Hugging Face ↗</a>
+        </div>
+      </div>
+      <div class="about-stats">
+        <div class="stat-box">
+          <div class="stat-number" data-target="20">0</div>
+          <div class="stat-suffix">+</div>
+          <div class="stat-label">Certifications</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number" data-target="5">0</div>
+          <div class="stat-suffix">+</div>
+          <div class="stat-label">Projects</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number" data-target="4">0</div>
+          <div class="stat-suffix">+</div>
+          <div class="stat-label">Tech Stacks</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number" data-target="2026">0</div>
+          <div class="stat-suffix"></div>
+          <div class="stat-label">Graduated</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       SKILLS
+  ═══════════════════════════════════════ -->
+  <section id="skills">
+    <div class="section-label">Expertise</div>
+    <div class="section-title reveal">SKILLS</div>
+    <div class="skills-grid reveal">
+      <div class="skill-item"><div class="skill-cat">Languages</div><div class="skill-name">Python, Java, SQL, R</div></div>
+      <div class="skill-item"><div class="skill-cat">Full Stack</div><div class="skill-name">React, FastAPI, Flask</div></div>
+      <div class="skill-item"><div class="skill-cat">Backend</div><div class="skill-name">REST APIs, MySQL, PostgreSQL</div></div>
+      <div class="skill-item"><div class="skill-cat">AI / ML</div><div class="skill-name">PyTorch, TensorFlow, OpenCV</div></div>
+      <div class="skill-item"><div class="skill-cat">AI / ML</div><div class="skill-name">Hugging Face, YOLO, Transformers</div></div>
+      <div class="skill-item"><div class="skill-cat">Cloud</div><div class="skill-name">AWS (S3, Lambda, RDS)</div></div>
+      <div class="skill-item"><div class="skill-cat">Tools</div><div class="skill-name">Git, Roboflow, API Integration</div></div>
+      <div class="skill-item"><div class="skill-cat">Deploy</div><div class="skill-name">Web Deployment, Serverless</div></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       CERTIFICATIONS
+  ═══════════════════════════════════════ -->
+  <section id="certifications">
+    <div class="section-label">Achievements</div>
+    <div class="section-title reveal">CERTS</div>
+    <div class="certs-grid reveal">
+
+      <div class="cert-card" onclick="openModal('pdftoimage/AWS Certified Cloud Practitioner certificate-1.jpg')">
+        <div class="cert-issuer">Amazon Web Services</div>
+        <div class="cert-name">AWS Cloud Practitioner</div>
+        <div class="cert-date">Oct 2024</div>
+        <div class="cert-view">View ↗</div>
+      </div>
+
+      <div class="cert-card" onclick="openModal('pdftoimage/wipro.png')">
+        <div class="cert-issuer">Wipro TalentNext</div>
+        <div class="cert-name">Java Full Stack Development</div>
+        <div class="cert-date">Oct 2025</div>
+        <div class="cert-view">View ↗</div>
+      </div>
+
+      <div class="cert-card" onclick="openModal('pdftoimage/edunet ibm internship.jpg')">
+        <div class="cert-issuer">Edunet · AICTE · IBM</div>
+        <div class="cert-name">AI &amp; Cloud Emerging Technologies Internship</div>
+        <div class="cert-date">Jul–Aug 2025</div>
+        <div class="cert-view">View ↗</div>
+      </div>
+
+      <div class="cert-card" onclick="openModal('pdftoimage/edunet shell internship.jpg')">
+        <div class="cert-issuer">Shell India · Edunet</div>
+        <div class="cert-name">AI &amp; Data Analytics — Green Skills</div>
+        <div class="cert-date">Jul–Aug 2025</div>
+        <div class="cert-view">View ↗</div>
+      </div>
+
+      <div class="cert-card" onclick="openModal('pdftoimage/gen ai course completed-1.jpg')">
+        <div class="cert-issuer">Simplilearn</div>
+        <div class="cert-name">Gen AI Specialization — Course Completed</div>
+        <div class="cert-date">Jun 2025</div>
+        <div class="cert-view">View ↗</div>
+      </div>
+
+      <div class="cert-card" onclick="openModal('pdftoimage/CISCO (PythonEssentials1)_page-0001.jpg')">
+        <div class="cert-issuer">Cisco Networking Academy</div>
+        <div class="cert-name">Python Essentials 1</div>
+        <div class="cert-date">Jul 2025</div>
+        <div class="cert-view">View ↗</div>
+      </div>
+
+      <div class="cert-card" onclick="openModal('pdftoimage/IBM Getting Started with Artificial Intelligence_page-0001.jpg')">
+        <div class="cert-issuer">IBM SkillsBuild</div>
+        <div class="cert-name">Getting Started with Artificial Intelligence</div>
+        <div class="cert-date">Jul 2025</div>
+        <div class="cert-view">View ↗</div>
+      </div>
+
+      <div class="cert-card" onclick="openModal('pdftoimage/IBM Journey to Cloud_page-0001.jpg')">
+        <div class="cert-issuer">IBM SkillsBuild</div>
+        <div class="cert-name">Journey to Cloud: Envisioning Your Solution</div>
+        <div class="cert-date">Jul 2025</div>
+        <div class="cert-view">View ↗</div>
+      </div>
+
+      <div class="cert-card" onclick="openModal('pdftoimage/digital-skill-web-analytics_certificate_of_achievement_i6j2onw (1)-1.jpg')">
+        <div class="cert-issuer">Accenture</div>
+        <div class="cert-name">Web Analytics</div>
+        <div class="cert-date">2024</div>
+        <div class="cert-view">View ↗</div>
+      </div>
+
+      <div class="cert-card" onclick="openModal('pdftoimage/hadoop-1.jpg')">
+        <div class="cert-issuer">Udemy</div>
+        <div class="cert-name">Big Data Hadoop</div>
+        <div class="cert-date">2024</div>
+        <div class="cert-view">View ↗</div>
+      </div>
+
+      <div class="cert-card" onclick="openModal('pdftoimage/javascript-1.jpg')">
+        <div class="cert-issuer">Udemy</div>
+        <div class="cert-name">Firebase &amp; JavaScript</div>
+        <div class="cert-date">2024</div>
+        <div class="cert-view">View ↗</div>
+      </div>
+
+      <div class="cert-card" onclick="openModal('pdftoimage/GEN AI 7-1.jpg')">
+        <div class="cert-issuer">Simplilearn</div>
+        <div class="cert-name">Capstone Project Module</div>
+        <div class="cert-date">Jun 2025</div>
+        <div class="cert-view">View ↗</div>
+      </div>
+
+      <div class="cert-card" onclick="openModal('pdftoimage/GEN AI 6-1.jpg')">
+        <div class="cert-issuer">Simplilearn</div>
+        <div class="cert-name">AI Governance Module</div>
+        <div class="cert-date">Jun 2025</div>
+        <div class="cert-view">View ↗</div>
+      </div>
+
+      <div class="cert-card" onclick="openModal('pdftoimage/GEN AI 5-1.jpg')">
+        <div class="cert-issuer">Simplilearn</div>
+        <div class="cert-name">Image Generation Module</div>
+        <div class="cert-date">Jun 2025</div>
+        <div class="cert-view">View ↗</div>
+      </div>
+
+      <div class="cert-card" onclick="openModal('pdftoimage/GEN AI 4-1.jpg')">
+        <div class="cert-issuer">Simplilearn</div>
+        <div class="cert-name">LLM Applications Module</div>
+        <div class="cert-date">Jun 2025</div>
+        <div class="cert-view">View ↗</div>
+      </div>
+
+      <div class="cert-card" onclick="openModal('pdftoimage/GEN AI 3-1.jpg')">
+        <div class="cert-issuer">Simplilearn</div>
+        <div class="cert-name">Generative AI Models Module</div>
+        <div class="cert-date">Feb 2025</div>
+        <div class="cert-view">View ↗</div>
+      </div>
+
+      <div class="cert-card" onclick="openModal('pdftoimage/GEN AI 2-1.jpg')">
+        <div class="cert-issuer">Simplilearn</div>
+        <div class="cert-name">Prompt Engineering &amp; ChatGPT Module</div>
+        <div class="cert-date">Feb 2025</div>
+        <div class="cert-view">View ↗</div>
+      </div>
+
+      <div class="cert-card" onclick="openModal('pdftoimage/ethical hacking.jpg')">
+        <div class="cert-issuer">Ozone Cyber Security</div>
+        <div class="cert-name">Ethical Hacking Workshop</div>
+        <div class="cert-date">2024</div>
+        <div class="cert-view">View ↗</div>
+      </div>
+
+      <div class="cert-card" onclick="openModal('pdftoimage/intellectual property rights.jpg')">
+        <div class="cert-issuer">TNSCST</div>
+        <div class="cert-name">Intellectual Property Rights Workshop</div>
+        <div class="cert-date">2024</div>
+        <div class="cert-view">View ↗</div>
+      </div>
+
+      <div class="cert-card" onclick="openModal('pdftoimage/unstop-1.jpg')">
+        <div class="cert-issuer">Unstop</div>
+        <div class="cert-name">Competition Participation</div>
+        <div class="cert-date">2024</div>
+        <div class="cert-view">View ↗</div>
+      </div>
+
+      <div class="cert-card" onclick="openModal('pdftoimage/creative design.jpg')">
+        <div class="cert-issuer">KRCT</div>
+        <div class="cert-name">Creative Design</div>
+        <div class="cert-date">2024</div>
+        <div class="cert-view">View ↗</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MODAL -->
+  <div id="modal">
+    <button id="modal-close" onclick="closeModal()">×</button>
+    <img id="modal-img" src="" alt="Certificate">
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       PROJECTS
+  ═══════════════════════════════════════ -->
+  <section id="projects">
+    <div class="section-label">Work</div>
+    <div class="section-title reveal">PROJECTS</div>
+    <div class="projects-list reveal">
+
+      <a class="project-row" href="https://github.com/harshanth0112/SEM-6" target="_blank" rel="noopener">
+        <div class="project-num">01</div>
+        <div class="project-info">
+          <h3>Sign Language → Text &amp; Speech</h3>
+          <p>Computer vision and deep learning system converting hand gestures into text and speech. Integrated Groq API chatbot for interactive conversations.</p>
+          <div class="project-tags-row">
+            <span class="ptag">Computer Vision</span>
+            <span class="ptag">Deep Learning</span>
+            <span class="ptag">NLP</span>
+            <span class="ptag">Python</span>
+          </div>
+        </div>
+        <div class="project-arrow">→</div>
+      </a>
+
+      <a class="project-row" href="https://github.com/harshanth0112/PRIVACY-PRESERVING-AI" target="_blank" rel="noopener">
+        <div class="project-num">02</div>
+        <div class="project-info">
+          <h3>Edge YOLO Surveillance</h3>
+          <p>Privacy-preserving real-time surveillance using YOLOv8. Detects weapons and hazards (fire, smoke) locally on edge devices — no cloud uploads.</p>
+          <div class="project-tags-row">
+            <span class="ptag">YOLOv8</span>
+            <span class="ptag">Edge AI</span>
+            <span class="ptag">Privacy</span>
+          </div>
+        </div>
+        <div class="project-arrow">→</div>
+      </a>
+
+      <a class="project-row" href="https://github.com/harshanth0112/summa" target="_blank" rel="noopener">
+        <div class="project-num">03</div>
+        <div class="project-info">
+          <h3>Supermarket Sales Analysis</h3>
+          <p>Flask web app for sales forecasting and visualization. Features interactive dashboards and Apriori frequent itemset mining for data-driven decisions.</p>
+          <div class="project-tags-row">
+            <span class="ptag">Flask</span>
+            <span class="ptag">Apriori</span>
+            <span class="ptag">Data Viz</span>
+          </div>
+        </div>
+        <div class="project-arrow">→</div>
+      </a>
+
+      <a class="project-row" href="https://github.com/harshanth0112/nestle-hr-assistant" target="_blank" rel="noopener">
+        <div class="project-num">04</div>
+        <div class="project-info">
+          <h3>Nestlé HR Assistant Chatbot</h3>
+          <p>HR query chatbot using Python, Gradio, and Groq API. Handles company policy questions and employee onboarding interactions.</p>
+          <div class="project-tags-row">
+            <span class="ptag">Gradio</span>
+            <span class="ptag">Groq API</span>
+            <span class="ptag">LLM</span>
+          </div>
+        </div>
+        <div class="project-arrow">→</div>
+      </a>
+
+      <a class="project-row" href="https://github.com/harshanth0112/portfolio-website" target="_blank" rel="noopener">
+        <div class="project-num">05</div>
+        <div class="project-info">
+          <h3>Personal Portfolio Website</h3>
+          <p>Interactive portfolio built with HTML, CSS, JavaScript, GSAP, PixiJS, Three.js and Swiper.js. Full dark/light mode with animated sections.</p>
+          <div class="project-tags-row">
+            <span class="ptag">GSAP</span>
+            <span class="ptag">PixiJS</span>
+            <span class="ptag">Three.js</span>
+          </div>
+        </div>
+        <div class="project-arrow">→</div>
+      </a>
+
+      <a class="project-row" href="https://github.com/harshanth0112/personal_library" target="_blank" rel="noopener">
+        <div class="project-num">06</div>
+        <div class="project-info">
+          <h3>Personal Library</h3>
+          <p>A personal library system to manage and organize collections effectively.</p>
+          <div class="project-tags-row">
+            <span class="ptag">Python</span>
+          </div>
+        </div>
+        <div class="project-arrow">→</div>
+      </a>
+
+      <a class="project-row" href="https://github.com/thelaunchpad21-hub/AgileDev" target="_blank" rel="noopener">
+        <div class="project-num">07</div>
+        <div class="project-info">
+          <h3>AgileDev</h3>
+          <p>An agile development hub designed to streamline workflows and boost team productivity.</p>
+          <div class="project-tags-row">
+            <span class="ptag">Agile</span>
+            <span class="ptag">Development</span>
+          </div>
+        </div>
+        <div class="project-arrow">→</div>
+      </a>
+
+      <a class="project-row" href="https://github.com/harshanth0112/AI-Based-Virtual-Doctor-using-Multimodal-LLMs-" target="_blank" rel="noopener">
+        <div class="project-num">08</div>
+        <div class="project-info">
+          <h3>AI-Based Virtual Doctor</h3>
+          <p>A virtual doctor application utilizing multimodal Large Language Models (LLMs) for AI-assisted medical insights.</p>
+          <div class="project-tags-row">
+            <span class="ptag">Python</span>
+            <span class="ptag">Multimodal LLM</span>
+            <span class="ptag">AI</span>
+          </div>
+        </div>
+        <div class="project-arrow">→</div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       CONTACT
+  ═══════════════════════════════════════ -->
+  <section id="contact">
+    <div class="section-label">Let's talk</div>
+    <div class="contact-grid reveal">
+      <div class="contact-left">
+        <h2 class="contact-heading">GET IN<br><span class="accent">TOUCH</span></h2>
+        <p class="contact-sub">Open to internships, collaborations,<br>and interesting AI projects.</p>
+        <div class="contact-links">
+          <a class="contact-link" href="https://www.linkedin.com/in/harshanth0112h/" target="_blank" rel="noopener">
+            <span class="cl-label">LinkedIn</span>
+            <span class="cl-value">harshanth0112h ↗</span>
+          </a>
+          <a class="contact-link" href="https://github.com/harshanth0112" target="_blank" rel="noopener">
+            <span class="cl-label">GitHub</span>
+            <span class="cl-value">harshanth0112 ↗</span>
+          </a>
+          <a class="contact-link" href="https://huggingface.co/Harshanth0112" target="_blank" rel="noopener">
+            <span class="cl-label">Hugging Face</span>
+            <span class="cl-value">Harshanth0112 ↗</span>
+          </a>
+          <div class="contact-link no-hover">
+            <span class="cl-label">Phone</span>
+            <span class="cl-value">+91 9842584621</span>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form" id="contact-form" onsubmit="sendEmail(event)">
+        <div class="field-wrap">
+          <input type="text" id="name" placeholder="Your Name" required autocomplete="name">
+        </div>
+        <div class="field-wrap">
+          <input type="email" id="email" placeholder="your@email.com" required autocomplete="email">
+        </div>
+        <div class="field-wrap">
+          <textarea id="message" placeholder="Your message..." rows="5" required></textarea>
+        </div>
+        <button type="submit" class="form-submit" id="submit-btn">Send Message</button>
+        <div id="form-msg"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer>
+    <span>© 2025 HARSHANTH R</span>
+    <span>AI &amp; DATA SCIENCE · KRCT · TRICHY</span>
+    <span>BUILT WITH HTML · CSS · JS</span>
+  </footer>
+
+  <script src="env.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
