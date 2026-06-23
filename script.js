@@ -4,7 +4,7 @@
 ═══════════════════════════════════════════════════════ */
 
 /* ── EMAIL JS INIT ──────────────────────────────────── */
-const EMAILJS_PUBLIC_KEY = ENV.EMAILJS_PUBLIC_KEY;
+const EMAILJS_PUBLIC_KEY = "XlFoEFbUUr2clNY0I";
 (function () {
   emailjs.init(EMAILJS_PUBLIC_KEY);
 })();
@@ -271,8 +271,8 @@ function formatEmailJsError(error) {
 function sendEmail(event) {
   event.preventDefault();
 
-  const serviceID = ENV.EMAILJS_SERVICE_ID;
-  const templateID = ENV.EMAILJS_TEMPLATE_ID;
+  const serviceID = "service_5n2ormd";
+  const templateID = "template_ojsb5p2";
   const submitButton =
     document.getElementById("submit-btn") ||
     document.querySelector(".contact-form button");
