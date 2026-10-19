@@ -85,6 +85,13 @@ export default function AdminPanel({ isOpen, onClose }) {
 
   // Direct sync to GitHub
   const handleGitHubCommit = async () => {
+    if (!ghConfig.pat) {
+      setActiveTab("github");
+      setSyncStatus("error");
+      setSyncMessage("Please generate and enter your GitHub Personal Access Token (PAT) in the field below.");
+      return;
+    }
+
     setSyncStatus("syncing");
     setSyncMessage("");
 
