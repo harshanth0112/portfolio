@@ -19,9 +19,11 @@ import {
   KeyRound,
   Eye,
   EyeOff,
+  Download,
+  ExternalLink,
 } from "lucide-react";
 import * as InitialData from "../data/portfolioData";
-import { commitPortfolioDataToGitHub } from "../utils/githubAdminSync";
+import { commitPortfolioDataToGitHub, generatePortfolioDataCode } from "../utils/githubAdminSync";
 
 export default function AdminPanel({ isOpen, onClose }) {
   // Authentication State
@@ -39,7 +41,7 @@ export default function AdminPanel({ isOpen, onClose }) {
   const [ghConfig, setGhConfig] = useState(() => ({
     pat: localStorage.getItem("hr_gh_pat") || "",
     owner: localStorage.getItem("hr_gh_owner") || "harshanth0112",
-    repo: localStorage.getItem("hr_gh_repo") || "portfolio-main",
+    repo: localStorage.getItem("hr_gh_repo") || "portfolio",
     branch: localStorage.getItem("hr_gh_branch") || "main",
   }));
   const [showPat, setShowPat] = useState(false);
@@ -103,6 +105,20 @@ export default function AdminPanel({ isOpen, onClose }) {
       setSyncStatus("error");
       setSyncMessage(err.message || "Failed to commit to GitHub.");
     }
+  };
+
+  // Download modified portfolioData.js directly
+  const handleDownloadDataFile = () => {
+    const code = generatePortfolioDataCode(data);
+    const blob = new Blob([code], { type: "text/javascript" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "portfolioData.js";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
   };
 
   if (!isOpen) return null;
@@ -832,8 +848,17 @@ export default function AdminPanel({ isOpen, onClose }) {
                         placeholder="ghp_xxxxxxxxxxxxxxxxxxxx"
                         className="w-full bg-surface border border-border text-sm font-mono p-2.5 text-[#F0EDE8] rounded-sm focus:border-accent focus:outline-none"
                       />
-                      <p className="text-[10px] font-mono text-muted/80 mt-1">
-                        Token is saved securely in your browser's localStorage and never transmitted elsewhere.
+                      <p className="text-[10px] font-mono text-muted/80 mt-1 flex items-center justify-between">
+                        <span>Token is saved locally in your browser and never transmitted elsewhere.</span>
+                        <a
+                          href="https://github.com/settings/tokens/new?scopes=repo&description=Portfolio+Admin+Sync"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-accent hover:underline inline-flex items-center gap-1 font-mono text-[11px]"
+                        >
+                          <span>Generate Token on GitHub</span>
+                          <ExternalLink className="w-3 h-3" />
+                        </a>
                       </p>
                     </div>
 
@@ -876,11 +901,11 @@ export default function AdminPanel({ isOpen, onClose }) {
                     </div>
                   </div>
 
-                  <div className="pt-2">
+                  <div className="pt-2 flex flex-wrap items-center gap-3">
                     <button
                       onClick={handleGitHubCommit}
                       disabled={syncStatus === "syncing" || !ghConfig.pat}
-                      className="px-6 py-3.5 bg-accent text-black font-mono text-xs uppercase tracking-widest font-semibold rounded-sm hover:shadow-[0_0_15px_rgba(200,255,0,0.4)] transition-all flex items-center gap-2 disabled:opacity-50"
+                      className="px-6 py-3.5 bg-accent text-black font-mono text-xs uppercase tracking-widest font-semibold rounded-sm hover:shadow-[0_0_15px_rgba(200,255,0,0.4)] transition-all flex items-center gap-2 disabled:opacity-50 cursor-pointer"
                     >
                       {syncStatus === "syncing" ? (
                         <>
@@ -893,6 +918,16 @@ export default function AdminPanel({ isOpen, onClose }) {
                           <span>Commit &amp; Push to GitHub</span>
                         </>
                       )}
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={handleDownloadDataFile}
+                      className="px-5 py-3.5 bg-surface border border-border text-[#F0EDE8] hover:border-accent hover:text-accent font-mono text-xs uppercase tracking-wider rounded-sm transition-all flex items-center gap-2 cursor-pointer"
+                      title="Export updated data file to your computer"
+                    >
+                      <Download className="w-4 h-4 text-accent" />
+                      <span>Export portfolioData.js</span>
                     </button>
                   </div>
                 </div>
