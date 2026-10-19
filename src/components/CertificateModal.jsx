@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { X, ExternalLink, ShieldCheck } from "lucide-react";
+import { getAssetUrl } from "../utils/assetHelper";
 
 export default function CertificateModal({ certificate, onClose }) {
   useEffect(() => {
@@ -46,7 +47,7 @@ export default function CertificateModal({ certificate, onClose }) {
 
           <div className="flex items-center gap-2">
             <a
-              href={certificate.image}
+              href={getAssetUrl(certificate.image)}
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 text-muted hover:text-accent transition-colors rounded hover:bg-surface3"
@@ -69,7 +70,7 @@ export default function CertificateModal({ certificate, onClose }) {
         {/* Certificate Image Frame */}
         <div className="p-4 sm:p-6 overflow-auto flex items-center justify-center bg-bg/50">
           <img
-            src={certificate.image}
+            src={getAssetUrl(certificate.image)}
             alt={certificate.title}
             className="max-h-[75vh] w-auto max-w-full object-contain rounded border border-border shadow-md"
           />
