@@ -1,7 +1,7 @@
 import React from "react";
 import { ArrowRight, Terminal } from "lucide-react";
 import { PERSONAL_INFO } from "../data/portfolioData";
-import { getAssetUrl } from "../utils/assetHelper";
+import avatarImg from "../assets/avatar.jpg";
 
 export default function HeroSection() {
   return (
@@ -70,13 +70,11 @@ export default function HeroSection() {
             {/* Portrait Image Frame */}
             <div className="relative rounded-lg overflow-hidden border border-border bg-surface aspect-[4/5] shadow-2xl">
               <img
-                src={getAssetUrl(PERSONAL_INFO.avatarImage)}
+                src={avatarImg}
                 alt={PERSONAL_INFO.name}
                 className="w-full h-full object-cover object-center transition-all duration-700 ease-out transform group-hover:scale-105"
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src = getAssetUrl("/Picsart_24-09-24_18-37-59-843.jpg");
-                }}
+                loading="eager"
+                decoding="async"
               />
               
               {/* Floating Badge */}
