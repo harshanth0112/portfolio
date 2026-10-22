@@ -83,7 +83,7 @@ export const MARQUEE_ITEMS = [
 export const SKILLS = [
   {
     "category": "Languages",
-    "name": "Python, Java, SQL, R"
+    "name": "Python, Java, SQL"
   },
   {
     "category": "Full Stack",
